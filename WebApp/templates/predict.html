@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lung Cancer Prediction Result</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <!-- ===================================== -->
+    <!-- NAVBAR -->
+    <!-- ===================================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            🫁 LungAI
+
+        </div>
+
+    </nav>
+
+    <!-- ===================================== -->
+    <!-- MAIN CONTAINER -->
+    <!-- ===================================== -->
+
+    <div class="container" id="results">
+
+        <!-- ===================================== -->
+        <!-- TITLE -->
+        <!-- ===================================== -->
+
+        <div class="title">
+
+            <h1>🧠 Prediction Results</h1>
+
+            <p>
+
+                AI-powered lung cancer risk analysis
+                using Machine Learning algorithms
+
+            </p>
+
+        </div>
+
+        <!-- ===================================== -->
+        <!-- FINAL RESULT -->
+        <!-- ===================================== -->
+
+        <div class="final-result card">
+
+            <h2>{{ final_result }}</h2>
+
+            <h1>{{ avg_result }}%</h1>
+
+        </div>
+
+        <!-- ===================================== -->
+        <!-- MODEL RESULT CARDS -->
+        <!-- ===================================== -->
+
+        <div class="cards">
+
+            <!-- Logistic Regression -->
+
+            <div class="card result-card">
+
+                <div class="model-icon">
+
+                    📊
+
+                </div>
+
+                <h2>Logistic Regression</h2>
+
+                <h1>{{ lr_result }}%</h1>
+
+                <p>
+
+                    Linear ML model for probability estimation.
+
+                </p>
+
+            </div>
+
+            <!-- Random Forest -->
+
+            <div class="card result-card">
+
+                <div class="model-icon">
+
+                    🌲
+
+                </div>
+
+                <h2>Random Forest</h2>
+
+                <h1>{{ rf_result }}%</h1>
+
+                <p>
+
+                    Ensemble learning using decision trees.
+
+                </p>
+
+            </div>
+
+            <!-- Naive Bayes -->
+
+            <div class="card result-card">
+
+                <div class="model-icon">
+
+                    🧠
+
+                </div>
+
+                <h2>Naive Bayes</h2>
+
+                <h1>{{ nb_result }}%</h1>
+
+                <p>
+
+                    Statistical probability based prediction model.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ===================================== -->
+        <!-- ANALYSIS SECTION -->
+        <!-- ===================================== -->
+
+        <section class="about-section">
+
+            <div class="about-card-main">
+
+                <h2>📈 AI Risk Analysis</h2>
+
+                <p>
+
+                    The prediction system analyzed
+                    smoking history, COPD diagnosis,
+                    lesion size, passive smoking exposure
+                    and family history.
+
+                </p>
+
+                <p>
+
+                    Multiple Machine Learning models were
+                    combined together to improve
+                    prediction reliability and reduce bias.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- DISCLAIMER -->
+        <!-- ===================================== -->
+
+        <div class="disclaimer card">
+
+            <h2>⚠️ Medical Disclaimer</h2>
+
+            <p>
+
+                This prediction system is not a substitute
+                for professional medical diagnosis.
+                Please consult a certified healthcare
+                professional for accurate medical advice
+                and clinical testing.
+
+            </p>
+
+        </div>
+
+        <!-- ===================================== -->
+        <!-- BUTTON -->
+        <!-- ===================================== -->
+
+        <div class="center-btn">
+
+            <a href="/" class="home-btn">
+
+                ⬅ Back To Home
+
+            </a>
+
+        </div>
+
+        <!-- ===================================== -->
+        <!-- FOOTER -->
+        <!-- ===================================== -->
+
+        <footer class="footer">
+
+            <div class="footer-line"></div>
+
+            <p>
+
+                © 2026 Lung Cancer Prediction AI |
+                Developed for Educational & Research Purpose
+
+            </p>
+
+        </footer>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ===================================== -->
+
+    <script
+        src="{{ url_for('static', filename='script/index.js') }}"
+    ></script>
+
+</body>
+
+</html>

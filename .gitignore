@@ -1,0 +1,42 @@
+# ==========================================
+# Python
+# ==========================================
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ==========================================
+# Virtual environments
+# ==========================================
+.venv/
+venv/
+
+# ==========================================
+# Jupyter temporary files
+# ==========================================
+.ipynb_checkpoints/
+
+# ==========================================
+# VS Code
+# ==========================================
+.vscode/
+
+# ==========================================
+# CONFIDENTIAL NLST DATASET
+# ==========================================
+Notebook/selected_nlst_data.csv
+
+# Block any other CSV datasets as an extra safety measure
+# Remove this line later only if we specifically decide a CSV is safe.
+Notebook/*.csv
+
+# ==========================================
+# CONFIDENTIAL NOTEBOOK / NLST PROJECT DATA
+# ==========================================
+Notebook/
+
+# ==========================================
+# OS files
+# ==========================================
+.DS_Store
+Thumbs.db

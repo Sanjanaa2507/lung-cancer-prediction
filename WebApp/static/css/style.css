@@ -1,0 +1,565 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top left,#5f5fff33,transparent 35%),
+    radial-gradient(circle at bottom right,#d946ef33,transparent 35%),
+    linear-gradient(135deg,#050816,#0f172a,#111827);
+
+    overflow-x:hidden;
+
+    color:white;
+}
+
+/* ===================================================== */
+/* ANIMATED BACKGROUND */
+/* ===================================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:600px;
+    height:600px;
+
+    background:#7c3aed55;
+
+    filter:blur(120px);
+
+    top:-200px;
+    left:-200px;
+
+    z-index:-1;
+
+    animation:float1 10s infinite alternate;
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    background:#ec489955;
+
+    filter:blur(120px);
+
+    bottom:-200px;
+    right:-150px;
+
+    z-index:-1;
+
+    animation:float2 12s infinite alternate;
+}
+
+@keyframes float1{
+
+    from{
+        transform:translateY(0px);
+    }
+
+    to{
+        transform:translateY(80px);
+    }
+}
+
+@keyframes float2{
+
+    from{
+        transform:translateX(0px);
+    }
+
+    to{
+        transform:translateX(-80px);
+    }
+}
+
+/* ===================================================== */
+/* CONTAINER */
+/* ===================================================== */
+
+.container{
+
+    width:95%;
+
+    max-width:1500px;
+
+    margin:auto;
+
+    padding:40px 0;
+}
+
+/* ===================================================== */
+/* TITLE */
+/* ===================================================== */
+
+.title{
+
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.title h1{
+
+    font-size:60px;
+
+    font-weight:700;
+
+    background:linear-gradient(to right,#8b5cf6,#ec4899);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    margin-bottom:10px;
+
+    text-shadow:0 0 25px rgba(236,72,153,0.4);
+}
+
+.title p{
+
+    font-size:20px;
+
+    color:#d1d5db;
+}
+
+/* ===================================================== */
+/* GLASS BOX */
+/* ===================================================== */
+
+.form-box,
+.result-container{
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    border-radius:35px;
+
+    padding:40px;
+
+    box-shadow:
+    0 8px 40px rgba(0,0,0,0.35),
+    inset 0 1px 1px rgba(255,255,255,0.08);
+
+    transition:0.4s;
+}
+
+.form-box:hover,
+.result-container:hover{
+
+    transform:
+    translateY(-4px)
+    rotateX(1deg);
+}
+
+/* ===================================================== */
+/* FORM */
+/* ===================================================== */
+
+form{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:28px;
+}
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.input-group label{
+
+    margin-bottom:10px;
+
+    font-size:16px;
+
+    color:#f3f4f6;
+
+    font-weight:500;
+}
+
+/* ===================================================== */
+/* INPUT */
+/* ===================================================== */
+
+.input-group input,
+.input-group select{
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    border-radius:16px;
+
+    padding:18px;
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus{
+
+    border-color:#8b5cf6;
+
+    box-shadow:
+    0 0 10px #8b5cf6aa,
+    0 0 20px #ec489955;
+}
+
+.input-group input::placeholder{
+
+    color:#cbd5e1;
+}
+
+select option{
+
+    background:#111827;
+}
+
+/* ===================================================== */
+/* BUTTON */
+/* ===================================================== */
+
+.full-width{
+
+    grid-column:1/-1;
+}
+
+.btn,
+.home-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(to right,#7c3aed,#ec4899);
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.4s;
+
+    box-shadow:
+    0 0 15px rgba(124,58,237,0.5),
+    0 0 25px rgba(236,72,153,0.3);
+}
+
+.btn:hover,
+.home-btn:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.02);
+
+    box-shadow:
+    0 0 20px rgba(124,58,237,0.7),
+    0 0 35px rgba(236,72,153,0.5);
+}
+
+/* ===================================================== */
+/* RESULT SECTION */
+/* ===================================================== */
+
+.heading{
+
+    text-align:center;
+
+    margin-bottom:35px;
+}
+
+.heading h1{
+
+    font-size:55px;
+
+    margin-bottom:12px;
+
+    background:linear-gradient(to right,#8b5cf6,#ec4899);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+.heading p{
+
+    color:#d1d5db;
+
+    font-size:18px;
+}
+
+/* ===================================================== */
+/* FINAL RESULT */
+/* ===================================================== */
+
+.final-result{
+
+    background:
+    linear-gradient(135deg,
+    rgba(124,58,237,0.9),
+    rgba(236,72,153,0.9));
+
+    padding:35px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.3);
+
+    animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.01);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+.final-result h2{
+
+    font-size:32px;
+
+    margin-bottom:15px;
+}
+
+.final-result h1{
+
+    font-size:58px;
+
+    font-weight:700;
+}
+
+/* ===================================================== */
+/* CARDS */
+/* ===================================================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+    margin-bottom:35px;
+}
+
+.card{
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:0.4s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:200px;
+    height:200px;
+
+    background:rgba(255,255,255,0.08);
+
+    border-radius:50%;
+
+    top:-80px;
+    right:-80px;
+}
+
+.card:hover{
+
+    transform:
+    translateY(-8px)
+    rotateX(2deg);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.25);
+}
+
+.card h2{
+
+    font-size:32px;
+
+    margin-bottom:20px;
+}
+
+.card h1{
+
+    font-size:54px;
+
+    background:linear-gradient(to right,#c084fc,#f9a8d4);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+/* ===================================================== */
+/* AVERAGE BOX */
+/* ===================================================== */
+
+.average-box{
+
+    background:rgba(255,255,255,0.08);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+    border:1px solid rgba(255,255,255,0.12);
+}
+
+.average-box h2{
+
+    font-size:36px;
+
+    margin-bottom:15px;
+}
+
+.average-box h1{
+
+    font-size:65px;
+
+    color:#fde047;
+
+    text-shadow:0 0 20px rgba(253,224,71,0.5);
+}
+
+/* ===================================================== */
+/* DISCLAIMER */
+/* ===================================================== */
+
+.disclaimer{
+
+    background:rgba(255,255,255,0.06);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    line-height:34px;
+
+    color:#e5e7eb;
+
+    font-size:17px;
+}
+
+/* ===================================================== */
+/* HOME BUTTON */
+/* ===================================================== */
+
+.home-btn{
+
+    display:block;
+
+    max-width:320px;
+
+    margin:35px auto 0;
+
+    text-align:center;
+
+    text-decoration:none;
+}
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media(max-width:900px){
+
+    .title h1,
+    .heading h1{
+
+        font-size:40px;
+    }
+
+    .final-result h1{
+
+        font-size:38px;
+    }
+
+    .card h1{
+
+        font-size:40px;
+    }
+
+    .average-box h1{
+
+        font-size:45px;
+    }
+
+    .form-box,
+    .result-container{
+
+        padding:25px;
+    }
+}
