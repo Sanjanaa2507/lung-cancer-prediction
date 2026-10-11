@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import pickle as pkl
 import numpy as np
-
+import os
 
 # =====================================================
 # FLASK APP
@@ -10,21 +10,26 @@ import numpy as np
 app = Flask(__name__)
 
 
+
 # =====================================================
 # LOAD MODELS
 # =====================================================
 
-with open("../models/LogisticRegressionModel.pkl", "rb") as f:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODELS_DIR = os.path.join(BASE_DIR, "..", "models")
+
+with open(os.path.join(MODELS_DIR, "LogisticRegressionModel.pkl"), "rb") as f:
     lr_model = pkl.load(f)
 
-with open("../models/RandomForestModel.pkl", "rb") as f:
+with open(os.path.join(MODELS_DIR, "RandomForestModel.pkl"), "rb") as f:
     rf_model = pkl.load(f)
 
-with open("../models/NaiveBayesModel.pkl", "rb") as f:
+with open(os.path.join(MODELS_DIR, "NaiveBayesModel.pkl"), "rb") as f:
     nb_model = pkl.load(f)
 
-with open("../models/scaler.pkl", "rb") as f:
+with open(os.path.join(MODELS_DIR, "scaler.pkl"), "rb") as f:
     scaler = pkl.load(f)
+
 
 
 # =====================================================
@@ -213,13 +218,12 @@ def predict():
 # RUN APP
 # =====================================================
 
+
+
+
 if __name__ == "__main__":
-
     app.run(
-
-        debug=True,
-
+        debug=False,
         host="0.0.0.0",
-
-        port=5000
+        port=int(os.environ.get("PORT", 5000))
     )
