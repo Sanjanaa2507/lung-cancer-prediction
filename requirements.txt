@@ -1,6 +1,6 @@
 
 Flask==3.0.3
-numpy==2.5.3
+numpy==2.2.6
 pandas==2.2.3
 scikit-learn==1.5.1
 scipy==1.13.1
